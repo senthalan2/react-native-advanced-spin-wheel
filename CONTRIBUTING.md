@@ -1,113 +1,229 @@
 # Contributing
 
-Contributions are always welcome, no matter how large or small!
+Thank you for your interest in contributing to **react-native-advanced-spin-wheel** 🎉
 
-We want this community to be friendly and respectful to each other. Please follow it in all your interactions with the project. Before contributing, please read the [code of conduct](./CODE_OF_CONDUCT.md).
+Repository: [https://github.com/senthalan2/react-native-advanced-spin-wheel](https://github.com/senthalan2/react-native-advanced-spin-wheel)
 
-## Development workflow
+Contributions of any size are welcome!
 
-To get started with the project, run `yarn` in the root directory to install the required dependencies for each package:
+We aim to keep this community friendly, respectful, and inclusive. Please follow the guidelines in our [Code of Conduct](./CODE_OF_CONDUCT.md) in all project interactions.
 
-```sh
-yarn
-```
+---
 
-> While it's possible to use [`npm`](https://github.com/npm/cli), the tooling is built around [`yarn`](https://classic.yarnpkg.com/), so you'll have an easier time if you use `yarn` for development.
+## 📦 Project Overview
 
-While developing, you can run the [example app](/example/) to test your changes. Any changes you make in your library's JavaScript code will be reflected in the example app without a rebuild. If you change any native code, then you'll need to rebuild the example app.
+**react-native-advanced-spin-wheel** is a fully JavaScript-based React Native library.
 
-To start the packager:
+### Key Details
 
-```sh
-yarn example start
-```
+- ✅ Built entirely with React Native (no native Android/iOS code)
+- ❌ No `android/` or `ios/` folders
+- ❌ No `.podspec` file
+- ✅ Written in TypeScript
+- ✅ Uses Jest for testing
+- ✅ Uses Prettier for formatting
+- ✅ Supports React Native CLI & Expo
+- ✅ Uses Yarn 4 (packageManager: yarn@4.11.0)
+- ✅ Can also be installed and tested via npm
 
-To run the example app on Android:
+Because this package does not contain native modules, **no native rebuild is required** when making changes.
 
-```sh
-yarn example android
-```
+---
 
-To run the example app on iOS:
+## 🛠 Development Setup
 
-```sh
-yarn example ios
-```
+### 1️⃣ Clone the repository
 
-Make sure your code passes TypeScript and ESLint. Run the following to verify:
+git clone https://github.com/senthalan2/react-native-advanced-spin-wheel.git  
+cd react-native-advanced-spin-wheel
 
-```sh
-yarn typecheck
-yarn lint
-```
+### 2️⃣ Install dependencies
 
-To fix formatting errors, run the following:
+This project uses **Yarn 4** (recommended):
 
-```sh
-yarn lint --fix
-```
+yarn install
 
-Remember to add tests for your change if possible. Run the unit tests by:
+You may also use npm if needed:
 
-```sh
+npm install
+
+---
+
+## 📁 Project Structure
+
+src/ → Source code (TypeScript)  
+lib/ → Build output (if generated)  
+example/ → Example usage (App.tsx only)
+
+There is no standalone example project. Example usage is available in:
+
+example/App.tsx
+
+---
+
+## 🧪 Testing Changes Locally
+
+Since this is a library package, you can test changes in two ways:
+
+### Option 1 — Using `npm pack` (Recommended)
+
+From the library root:
+
+npm pack
+
+Then install the generated `.tgz` file inside your test React Native project:
+
+npm install ../react-native-advanced-spin-wheel-x.x.x.tgz
+
+---
+
+### Option 2 — Using `yarn link` or `npm link`
+
+From the library:
+
+yarn link
+
+Then inside your test project:
+
+yarn link react-native-advanced-spin-wheel
+
+If Metro has issues resolving the package:
+
+npx react-native start --reset-cache
+
+---
+
+## 🚀 Available Scripts
+
+Based on `package.json`, the following scripts are available:
+
+### Run tests
+
 yarn test
-```
 
-To edit the Objective-C or Swift files, open `example/ios/PatternlockAuthenticationExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-advanced-spin-wheel`.
+or
 
-To edit the Java or Kotlin files, open `example/android` in Android studio and find the source files at `react-native-advanced-spin-wheel` under `Android`.
+npm test
 
-### Commit message convention
+Uses **Jest** with `react-native` preset.
 
-We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:
+---
 
-- `fix`: bug fixes, e.g. fix crash due to deprecated method.
-- `feat`: new features, e.g. add new method to the module.
-- `refactor`: code refactor, e.g. migrate from class components to hooks.
-- `docs`: changes into documentation, e.g. add usage example for the module..
-- `test`: adding or updating tests, e.g. add integration tests using detox.
-- `chore`: tooling changes, e.g. change CI config.
+### Type checking
 
-Our pre-commit hooks verify that your commit message matches this format when committing.
+yarn typecheck
 
-### Linting and tests
+or
 
-[ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/)
+npm run typecheck
 
-We use [TypeScript](https://www.typescriptlang.org/) for type checking, [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
+Runs the TypeScript compiler (`tsc`).
 
-Our pre-commit hooks verify that the linter and tests pass when committing.
+---
 
-### Publishing to npm
+## 🧹 Code Formatting
 
-We use [release-it](https://github.com/release-it/release-it) to make it easier to publish new versions. It handles common tasks like bumping version based on semver, creating tags and releases etc.
+This project uses **Prettier** with the following rules:
 
-To publish new versions, run the following:
+- Single quotes
+- 2 space indentation
+- Trailing commas (es5)
+- Consistent quote props
 
-```sh
-yarn release
-```
+Please format your code before submitting a PR:
 
-### Scripts
+npx prettier --write .
 
-The `package.json` file contains various scripts for common tasks:
+---
 
-- `yarn bootstrap`: setup project by installing all dependencies and pods.
-- `yarn typecheck`: type-check files with TypeScript.
-- `yarn lint`: lint files with ESLint.
-- `yarn test`: run unit tests with Jest.
-- `yarn example start`: start the Metro server for the example app.
-- `yarn example android`: run the example app on Android.
-- `yarn example ios`: run the example app on iOS.
+## 🧠 Technical Guidelines
 
-### Sending a pull request
+- Write code in **TypeScript**
+- Keep the library fully JavaScript-based (no native modules)
+- Ensure compatibility with:
+  - React Native CLI
+  - Expo
 
-> **Working on your first pull request?** You can learn how from this _free_ series: [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
+- Avoid breaking API changes without discussion
+- Keep performance in mind (animations use Reanimated)
 
-When you're sending a pull request:
+---
 
-- Prefer small pull requests focused on one change.
-- Verify that linters and tests are passing.
-- Review the documentation to make sure it looks good.
-- Follow the pull request template when opening a pull request.
-- For pull requests that change the API or implementation, discuss with maintainers first by opening an issue.
+## 📝 Commit Message Convention
+
+We follow the **Conventional Commits** specification:
+
+[https://www.conventionalcommits.org/](https://www.conventionalcommits.org/)
+
+### Allowed types:
+
+- `feat` — New feature
+- `fix` — Bug fix
+- `refactor` — Code refactor
+- `docs` — Documentation changes
+- `test` — Add/update tests
+- `chore` — Tooling or config changes
+
+### Examples:
+
+feat: add segment gradient support  
+fix: correct spin calculation on high velocity  
+refactor: simplify angle normalization logic  
+docs: update usage example
+
+Please keep commit messages clear and descriptive.
+
+---
+
+## 📤 Publishing (Maintainers Only)
+
+This package is published to npm:
+
+https://registry.npmjs.org/
+
+To publish a new version:
+
+1.  Update version in `package.json`
+2.  Ensure tests pass
+3.  Publish:
+
+npm publish
+
+---
+
+## 🔁 Pull Request Guidelines
+
+When submitting a pull request:
+
+- Keep PRs small and focused.
+- Ensure `yarn test` passes.
+- Ensure `yarn typecheck` passes.
+- Format code with Prettier.
+- Update documentation if needed.
+- For API changes, open an issue first.
+
+---
+
+## 🐛 Reporting Issues
+
+When creating an issue, please include:
+
+- React Native version
+- Platform (iOS / Android / Both)
+- Expo or CLI?
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+- Screenshots or logs (if applicable)
+
+Issue tracker:
+
+[https://github.com/senthalan2/react-native-advanced-spin-wheel/issues](https://github.com/senthalan2/react-native-advanced-spin-wheel/issues)
+
+---
+
+## ❤️ Thank You
+
+Your contributions help improve **react-native-advanced-spin-wheel** for the entire community.
+
+We appreciate your time, effort, and support! 🚀

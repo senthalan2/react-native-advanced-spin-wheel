@@ -104,7 +104,7 @@ declare module 'react-native-advanced-spin-wheel' {
         easing?: EasingFunction;
         /** Enables the `onTick` callback to fire so you can play custom audio. Default is false. */
         enableSound?: boolean;
-        /** Triggers haptic feedback during the spin and when the wheel stops. Default is true. */
+        /** Triggers haptic feedback during the spin and when the wheel stops. Default is false. */
         enableHaptics?: boolean;
         /** Custom React element to replace the default downward-pointing arrow at the top. */
         pointerComponent?: ReactNode;
