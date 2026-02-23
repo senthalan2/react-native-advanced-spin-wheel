@@ -26,7 +26,7 @@ Check out the `SpinWheel` in action with different styles:
   
 | Demo 1 | Demo 2 |  
 |--------|--------|  
-| ![SpinWheel Demo in Android](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android.gif) | ![SpinWheel Demo in IOS](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS.gif) |
+| ![SpinWheel Demo in Android](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android_Recording.gif) | ![SpinWheel Demo in IOS](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS_Recording.gif) |
   
   
 ## ⚡ Installation  
