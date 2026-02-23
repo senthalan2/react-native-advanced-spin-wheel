@@ -24,13 +24,10 @@ Ideal for enhancing your app’s UI with engaging, animated wheel interfaces tha
 
 Check out the `SpinWheel` in action with different styles:  
   
-<div style="display: flex; gap: 20px; justify-content: center; align-items: center;">  
+| Demo 1 | Demo 2 |  
+|--------|--------|  
+| ![SpinWheel Demo in Android](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android.gif) | ![SpinWheel Demo in IOS](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS.gif) |
   
-<img src="https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android.gif" alt="SpinWheel Demo in Android" width="300" />  
-  
-<img src="https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS.gif" alt="SpinWheel Demo in IOS" width="300" />  
-  
-</div>
   
 ## ⚡ Installation  
   
