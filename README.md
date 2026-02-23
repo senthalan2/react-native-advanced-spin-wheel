@@ -9,8 +9,6 @@ Ideal for enhancing your app’s UI with engaging, animated wheel interfaces tha
   
 ## 🌟 Features  
   
-## Features ✨  
-  
 - 🎨 **Customizable slices** – display text, colors, and images per slice.  
 - 🎯 **Center knob control** – adjustable size, text, gradients, shadow, or custom content.  
 - 🌀 **Smooth physics-based spin animations** – configurable duration, easing, and spins.  
