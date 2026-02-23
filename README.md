@@ -74,10 +74,10 @@ export  default  function  App() {
   
 | Prop | Type | Default | Description |  
 |------|------|---------|-------------|  
-| `sections` | [SpinWheelSectionProps](https://github.com/senthalan2/react-native-advanced-spin-wheel?tab=readme-ov-file#spinwheelsectionprops-)[] |  | Array of wheel slices. **Required.** |  
+| `sections` | [`SpinWheelSectionProps`](https://github.com/senthalan2/react-native-advanced-spin-wheel?tab=readme-ov-file#spinwheelsectionprops-)[] |  | Array of wheel slices. **Required.** |  
 | `size` | `number` | 300 | Diameter of the wheel in pixels. |  
 | `strokeWidth` | `number` | 0 | Width of the border line separating each slice. |  
-| `knobProps` | [SpinWheelKnobProps](https://github.com/senthalan2/react-native-advanced-spin-wheel?tab=readme-ov-file#spinwheelknobprops-) | | Configuration object for the default center knob. |  
+| `knobProps` | [`SpinWheelKnobProps`](https://github.com/senthalan2/react-native-advanced-spin-wheel?tab=readme-ov-file#spinwheelknobprops-) | | Configuration object for the default center knob. |  
 | `renderKnob` | `(props: SpinWheelKnobProps) => ReactNode` |  | Custom render function to fully replace the center knob. |  
 | `showDefaultKnob` | `boolean` | true | Whether to render the default center knob. |  
 | `onSpinStart` | `() => void` |  | Callback fired immediately when the wheel starts spinning. |  
@@ -97,8 +97,8 @@ export  default  function  App() {
 | `winningIndex` | `number` | | Specific slice index the wheel is rigged to stop at. If undefined, outcome is random. |  
 | `containerStyle` | `ViewStyle` |  | Styling applied to the outermost wrapper View. |  
 | `wheelStyle` | `ViewStyle` |  | Styling applied directly to the Animated View containing the SVG wheel. |  
-| `titleStyle` | `WheelTextStyleProps` |  | Global typography styles applied to all section titles. |  
-| `descriptionStyle` | `WheelTextStyleProps` |  | Global typography styles applied to all section descriptions. |
+| `titleStyle` | [`WheelTextStyleProps`](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/README.md#wheeltextstyleprops) |  | Global typography styles applied to all section titles. |  
+| `descriptionStyle` | [`WheelTextStyleProps`](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/README.md#wheeltextstyleprops) |  | Global typography styles applied to all section descriptions. |
 ---
 
 ### SpinWheelKnobProps 🎯  
