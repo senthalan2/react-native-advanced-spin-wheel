@@ -1,71 +1,97 @@
-import React, { useRef, useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  SafeAreaView,
-  Alert,
-} from "react-native";
+import React, { useRef, useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   SpinWheel,
-  SpinWheelRef,
-  SpinWheelSection,
-} from "react-native-advanced-spin-wheel";
+  SpinWheelRefProps,
+  SpinWheelSectionProps,
+} from 'react-native-advanced-spin-wheel';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const sections: SpinWheelSection[] = [
-  { id: "1", title: "$100", backgroundColor: "#E25B5F" },
-  { id: "2", title: "Try Again", backgroundColor: "#F9A03F" },
-  { id: "3", title: "$500", backgroundColor: "#F7D047" },
-  { id: "4", title: "Lose Turn", backgroundColor: "#9BDE7E" },
-  { id: "5", title: "$1000", backgroundColor: "#4CB5AB" },
-  { id: "6", title: "Jackpot", backgroundColor: "#387D7A" },
+const mockSections: SpinWheelSectionProps[] = [
+  {
+    id: '1',
+    title: '$ 100',
+    backgroundColor: '#FF6B6B',
+    textColor: '#FFF',
+  },
+  {
+    id: '2',
+    title: 'Try Again',
+    backgroundColor: '#4ECDC4',
+    textColor: '#FFF',
+  },
+  { id: '3', title: '$ 50', backgroundColor: '#FFE66D', textColor: '#333' },
+  {
+    id: '4',
+    title: 'Jackpot',
+    backgroundColor: '#95A5A6',
+    textColor: '#FFF',
+  },
+  { id: '5', title: '$ 10', backgroundColor: '#F1948A', textColor: '#FFF' },
+  { id: '6', title: 'Lose', backgroundColor: '#34495E', textColor: '#FFF' },
 ];
 
 export default function App() {
-  const wheelRef = useRef<SpinWheelRef>(null);
-  const [winner, setWinner] = useState<string | null>(null);
+  const wheelRef = useRef<SpinWheelRefProps>(null);
+  const [result, setResult] = useState<string>('Spin to win!');
 
-  const handleSpinEnd = (section: SpinWheelSection) => {
-    setWinner(section.title);
-    Alert.alert("Spin Finished!", `You landed on: ${section.title}`);
+  const handleSpinEnd = (winner: SpinWheelSectionProps) => {
+    setResult(`You landed on: ${winner.title}`);
+  };
+
+  const onReset = () => {
+    setResult('Spin to win!');
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Fortune Wheel</Text>
+      <Text style={styles.title}>Wheel of Fortune</Text>
+      <Text style={styles.resultText}>{result}</Text>
 
       <View style={styles.wheelContainer}>
         <SpinWheel
           ref={wheelRef}
+          sections={mockSections}
           size={320}
-          sections={sections}
+          strokeWidth={2}
           onSpinEnd={handleSpinEnd}
+          onReset={onReset}
+          winningIndex={1}
           knobProps={{
-            text: "GO!",
+            text: 'PLAY',
             size: 80,
-            backgroundColor: "#fff",
+            gradientColors: ['#FFD700', '#FFA500'],
+            textStyle: { color: '#FFF', fontSize: 18 },
           }}
+          onTick={() => {
+            console.log('TICK');
+          }}
+          enableSound
         />
-      </View>
-
-      <Text style={styles.resultText}>Last Winner: {winner || "None yet"}</Text>
-
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Spin Programmatically"
-          onPress={() => wheelRef.current?.spin()}
-        />
-        <Button
-          title="Force Jackpot"
-          onPress={() => wheelRef.current?.spinToIndex(5)}
-          color="#387D7A"
-        />
-        <Button
-          title="Reset"
-          onPress={() => wheelRef.current?.reset()}
-          color="red"
-        />
+        <TouchableOpacity
+          onPress={() => {
+            wheelRef.current?.spin();
+          }}
+          style={styles.spinButton}
+        >
+          <Text style={styles.spinText}>Spin</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            wheelRef.current?.spinToIndex(3);
+          }}
+          style={[styles.spinButton, { backgroundColor: '#FF6F61' }]}
+        >
+          <Text style={styles.spinText}>Spin to Index</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            wheelRef.current?.reset();
+          }}
+          style={[styles.spinButton, { backgroundColor: '#FF0099' }]}
+        >
+          <Text style={styles.spinText}>Reset</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -74,26 +100,26 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1E1E1E",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#1E1E24',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 40,
-  },
-  wheelContainer: {
-    marginVertical: 20,
-  },
+  title: { fontSize: 28, fontWeight: 'bold', color: '#FFF', marginBottom: 20 },
   resultText: {
-    marginTop: 20,
     fontSize: 18,
-    color: "#fff",
+    color: '#4ECDC4',
+    marginBottom: 40,
+    fontWeight: '600',
   },
-  buttonContainer: {
+  wheelContainer: { alignItems: 'center', justifyContent: 'center' },
+  spinButton: {
+    backgroundColor: '#1E90FF',
+    borderRadius: 20,
     marginTop: 30,
-    gap: 15,
+    padding: 10,
+    width: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  spinText: { color: 'white', fontSize: 20 },
 });

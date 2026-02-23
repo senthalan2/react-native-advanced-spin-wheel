@@ -1,25 +1,19 @@
-// Converts degrees to radians
-export const degToRad = (deg: number) => (deg * Math.PI) / 180;
-
-// Gets Cartesian coordinates for a given angle and radius
-export const getCoordinatesForAngle = (angle: number, radius: number) => {
+export const polarToCartesian = (centerX: number, centerY: number, radius: number, angleInDegrees: number) => {
+    const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
     return {
-        x: radius + radius * Math.cos(degToRad(angle)),
-        y: radius + radius * Math.sin(degToRad(angle)),
+        x: centerX + radius * Math.cos(angleInRadians),
+        y: centerY + radius * Math.sin(angleInRadians),
     };
 };
 
-// Generates an SVG path for a wheel slice
-export const createSlicePath = (
-    startAngle: number,
-    endAngle: number,
-    radius: number,
-) => {
-    const start = getCoordinatesForAngle(startAngle, radius);
-    const end = getCoordinatesForAngle(endAngle, radius);
-
-    // Flag for arcs > 180 degrees
+export const createSlicePath = (x: number, y: number, r: number, startAngle: number, endAngle: number) => {
+    const start = polarToCartesian(x, y, r, endAngle);
+    const end = polarToCartesian(x, y, r, startAngle);
     const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-
-    return `M ${radius} ${radius} L ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${end.x} ${end.y} Z`;
+    return [
+        'M', x, y,
+        'L', start.x, start.y,
+        'A', r, r, 0, largeArcFlag, 0, end.x, end.y,
+        'Z',
+    ].join(' ');
 };
