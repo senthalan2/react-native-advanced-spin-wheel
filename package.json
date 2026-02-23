@@ -1,0 +1,90 @@
+{
+  "name": "react-native-advanced-spin-wheel",
+  "version": "1.0.0",
+  "description": "A fully customizable, high-performance, and physics-based spin wheel component for React Native.",
+  "main": "./src/index.ts",
+  "module": "lib/module/index",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./src/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!lib/typescript/example",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc"
+  },
+  "keywords": [
+    "react-native",
+    "spin-wheel",
+    "fortune-wheel",
+    "lucky-wheel",
+    "reanimated",
+    "svg",
+    "ios",
+    "android",
+    "expo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senthalan2/react-native-advanced-spin-wheel.git"
+  },
+  "author": "Senthalan <senthalan2@gmail.com> (https://github.com/senthalan2)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/senthalan2/react-native-advanced-spin-wheel/issues"
+  },
+  "homepage": "https://github.com/senthalan2",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "commonjs",
+ 
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-native": "^0.72.8",
+    "@types/jest": "^30.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-native": "^4.0.1",
+    "jest": "^30.2.0",
+    "metro-react-native-babel-preset": "^0.77.0",
+    "prettier": "^3.8.1",
+    "react": "^19.2.4",
+    "react-native": "^0.84.0",
+    "react-native-reanimated":"^4.2.2",
+    "react-native-svg": "^15.15.3",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "yarn@4.11.0",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+
+}
