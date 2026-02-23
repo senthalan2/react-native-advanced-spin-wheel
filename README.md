@@ -18,6 +18,19 @@ Ideal for enhancing your app’s UI with engaging, animated wheel interfaces tha
 - 🔄 **Programmatic control** – spin, spin to a specific index, or reset using refs.   
   
 ---  
+
+## 🎯 Demo
+
+
+Check out the `SpinWheel` in action with different styles:  
+  
+<div style="display: flex; gap: 20px; justify-content: center; align-items: center;">  
+  
+<img src="https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android.gif" alt="SpinWheel Demo in Android" width="300" />  
+  
+<img src="https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS.gif" alt="SpinWheel Demo in IOS" width="300" />  
+  
+</div>
   
 ## ⚡ Installation  
   
