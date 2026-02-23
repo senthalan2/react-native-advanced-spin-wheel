@@ -104,21 +104,21 @@ export  default  function  App() {
 
 ### SpinWheelKnobProps 🎯
 
-| Prop              | Type              | Default   | Description                                                                                       |
-| ----------------- | ----------------- | --------- | ------------------------------------------------------------------------------------------------- |
-| `size`            | `number`          | 80        | Diameter of the knob in pixels.                                                                   |
-| `backgroundColor` | `string`          | `#FFFFFF` | Solid background color of the knob.                                                               |
-| `borderColor`     | `string`          | `#E0E0E0` | Border color of the knob.                                                                         |
-| `borderWidth`     | `number`          | 4         | Border width of the knob.                                                                         |
-| `text`            | `string`          | `'SPIN'`  | Text displayed inside the knob.                                                                   |
-| `textStyle`       | `TextStyle`       |           | Additional React Native Text styles applied to the knob text.                                     |
-| `renderContent`   | `() => ReactNode` |           | Custom function to render complex content inside the knob. Overrides `text`.                      |
-| `shadow`          | `boolean`         | true      | Show a drop shadow behind the knob.                                                               |
-| `disabled`        | `boolean`         | false     | Disable press interactions on the knob.                                                           |
-| `loading`         | `boolean`         | false     | Show a loading indicator inside the knob.                                                         |
-| `gradientColors`  | `string[]`        |           | Array of colors to create a linear gradient for the knob background. Overrides `backgroundColor`. |
-| `onPress`         | `() => void`      |           | Callback fired when the knob is pressed.                                                          |
-| `style`           | `ViewStyle`       |           | Additional React Native View styles for the knob container.                                       |
+| Prop              | Type              | Default Description |
+| ----------------- | ----------------- | ------------------- | ------------------------------------------------------------------------------------------------- |
+| `size`            | `number`          | 80                  | Diameter of the knob in pixels.                                                                   |
+| `backgroundColor` | `string`          | `#FFFFFF`           | Solid background color of the knob.                                                               |
+| `borderColor`     | `string`          | `#E0E0E0`           | Border color of the knob.                                                                         |
+| `borderWidth`     | `number`          | 4                   | Border width of the knob.                                                                         |
+| `text`            | `string`          | `'SPIN'`            | Text displayed inside the knob.                                                                   |
+| `textStyle`       | `TextStyle`       |                     | Additional React Native Text styles applied to the knob text.                                     |
+| `renderContent`   | `() => ReactNode` |                     | Custom function to render complex content inside the knob. Overrides `text`.                      |
+| `shadow`          | `boolean`         | true                | Show a drop shadow behind the knob.                                                               |
+| `disabled`        | `boolean`         | false               | Disable press interactions on the knob.                                                           |
+| `loading`         | `boolean`         | false               | Show a loading indicator inside the knob.                                                         |
+| `gradientColors`  | `string[]`        |                     | Array of colors to create a linear gradient for the knob background. Overrides `backgroundColor`. |
+| `onPress`         | `() => void`      |                     | Callback fired when the knob is pressed.                                                          |
+| `style`           | `ViewStyle`       |                     | Additional React Native View styles for the knob container.                                       |
 
 ---
 
