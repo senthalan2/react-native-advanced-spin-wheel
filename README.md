@@ -72,8 +72,8 @@ export  default  function  App() {
 
 ### SpinWheelProps 🎢
 
-| Prop                   | Type                                                                                                                                | Default                     | Description                                                                                        |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------- |
+| Prop                   | Type    | Description    |
+| ---------------------- | ------- | -------------- |
 | `sections`             | [SpinWheelSectionProps](https://github.com/senthalan2/react-native-advanced-spin-wheel?tab=readme-ov-file#spinwheelsectionprops-)[] |                             | Array of wheel slices. **Required.**                                                               |
 | `size`                 | `number`                                                                                                                            | 300                         | Diameter of the wheel in pixels.                                                                   |
 | `strokeWidth`          | `number`                                                                                                                            | 0                           | Width of the border line separating each slice.                                                    |
