@@ -24,7 +24,7 @@ Ideal for enhancing your app’s UI with engaging, animated wheel interfaces tha
 
 Check out the `SpinWheel` in action with different styles:  
   
-| Demo 1 | Demo 2 |  
+| Android | IOS |  
 |--------|--------|  
 | ![SpinWheel Demo in Android](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/Android_Recording.gif) | ![SpinWheel Demo in IOS](https://github.com/senthalan2/react-native-advanced-spin-wheel/blob/main/Assets/IOS_Recording.gif) |
   
