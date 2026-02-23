@@ -66,7 +66,6 @@ export default function App() {
           onTick={() => {
             console.log('TICK');
           }}
-          enableSound
         />
         <TouchableOpacity
           onPress={() => {
